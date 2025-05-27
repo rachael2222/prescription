@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+// 임시로 하드코딩 - 나중에 환경변수로 변경 예정
+const API_BASE_URL = 'https://your-backend-url.com' // 백엔드 배포 후 변경 필요
 
 const api = axios.create({
   baseURL: API_BASE_URL,
