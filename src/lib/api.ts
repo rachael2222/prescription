@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { AnalysisResponse, TextToSpeechResponse } from '@/types'
 
-// 환경변수 또는 기본값 사용
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prescription-backend.vercel.app'
+// 환경변수 또는 기본값 사용 (Vercel API Routes)
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || ''
 
 const api = axios.create({
   baseURL: API_BASE_URL,
