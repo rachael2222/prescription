@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
+    <header className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">

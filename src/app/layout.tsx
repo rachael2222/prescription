@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description: '처방전 사진을 업로드하면 AI가 약품 정보를 분석해드립니다.',
   keywords: '처방전, 의료, AI, 약품분석, 건강관리',
   authors: [{ name: 'Prescription Analyzer Team' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
