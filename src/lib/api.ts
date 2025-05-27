@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { AnalysisResponse, TextToSpeechResponse } from '@/types'
 
 // 환경변수 또는 기본값 사용
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prescription-backend.vercel.app'
@@ -7,20 +8,6 @@ const api = axios.create({
   baseURL: API_BASE_URL,
   timeout: 30000,
 })
-
-export interface AnalysisResponse {
-  success: boolean
-  data: {
-    extracted_text: string
-    medications: string[]
-    analysis: string
-  }
-}
-
-export interface TextToSpeechResponse {
-  success: boolean
-  audio_data: string
-}
 
 export const analyzeImage = async (file: File) => {
   const formData = new FormData()

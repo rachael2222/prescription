@@ -1,7 +1,7 @@
 'use client'
 
 import ReactMarkdown from 'react-markdown'
-import { AnalysisData } from '@/app/page'
+import { AnalysisData } from '@/types'
 
 interface AnalysisResultProps {
   result: AnalysisData
@@ -40,13 +40,13 @@ export function AnalysisResult({ result, onPlayAudio, audioUrl }: AnalysisResult
       </div>
 
       {result.medications && result.medications.length > 0 && (
-        <div className="bg-primary-50 rounded-lg p-6 mb-6">
-          <h3 className="text-lg font-semibold text-primary-700 mb-4">💊 처방된 약품</h3>
+        <div className="bg-blue-50 rounded-lg p-6 mb-6">
+          <h3 className="text-lg font-semibold text-blue-700 mb-4">💊 처방된 약품</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {result.medications.map((med, index) => (
               <div 
                 key={index}
-                className="bg-white px-4 py-2 rounded-md border-l-4 border-primary-500 shadow-sm"
+                className="bg-white px-4 py-2 rounded-md border-l-4 border-blue-500 shadow-sm"
               >
                 {med}
               </div>
@@ -60,12 +60,12 @@ export function AnalysisResult({ result, onPlayAudio, audioUrl }: AnalysisResult
           <ReactMarkdown
             components={{
               h2: ({ children }) => (
-                <h2 className="text-xl font-bold text-primary-600 border-b-2 border-primary-200 pb-2 mb-4 mt-6">
+                <h2 className="text-xl font-bold text-blue-600 border-b-2 border-blue-200 pb-2 mb-4 mt-6">
                   {children}
                 </h2>
               ),
               h3: ({ children }) => (
-                <h3 className="text-lg font-semibold text-secondary-600 mb-3 mt-4">
+                <h3 className="text-lg font-semibold text-purple-600 mb-3 mt-4">
                   {children}
                 </h3>
               ),
@@ -76,12 +76,12 @@ export function AnalysisResult({ result, onPlayAudio, audioUrl }: AnalysisResult
               ),
               li: ({ children }) => (
                 <li className="flex items-start">
-                  <span className="text-primary-500 mr-2">•</span>
+                  <span className="text-blue-500 mr-2">•</span>
                   <span>{children}</span>
                 </li>
               ),
               strong: ({ children }) => (
-                <strong className="text-primary-600 font-semibold">
+                <strong className="text-blue-600 font-semibold">
                   {children}
                 </strong>
               ),
