@@ -6,7 +6,10 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || ''
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 30000,
+  timeout: 10000, // 타임아웃 단축
+  headers: {
+    'Cache-Control': 'no-cache', // 캐시 방지
+  }
 })
 
 export const analyzeImage = async (file: File) => {

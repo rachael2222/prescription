@@ -86,9 +86,16 @@ export default function Home() {
                 <button
                   onClick={handleAnalyze}
                   disabled={loading}
-                  className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-medium py-2 px-6 rounded-lg transition-colors"
+                  className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-medium py-3 px-8 rounded-lg transition-colors flex items-center justify-center"
                 >
-                  {loading ? '분석 중...' : '분석 시작'}
+                  {loading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      AI 분석 중... (최대 10초)
+                    </>
+                  ) : (
+                    '🚀 분석 시작'
+                  )}
                 </button>
               </div>
             )}

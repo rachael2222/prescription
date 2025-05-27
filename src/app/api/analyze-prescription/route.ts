@@ -2,9 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
-    // 현재는 모의 응답을 반환
-    // 실제 구현을 위해서는 Python 백엔드가 필요합니다
-    
+    // 즉시 응답을 위한 최적화된 모의 API
     const formData = await request.formData()
     const file = formData.get('file') as File
     
@@ -15,12 +13,10 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 업로드된 파일명에 따른 더 현실적인 모의 응답
-    const fileName = file.name.toLowerCase()
-    let mockData
-    
-    if (fileName.includes('prescription') || fileName.includes('처방전')) {
-      mockData = {
+    // 즉시 응답 - 상세한 모의 데이터 (원본 복구)
+    const mockResponse = {
+      success: true,
+      data: {
         extracted_text: `○○병원 처방전
 환자명: 홍길동
 진료과: 내과
@@ -67,27 +63,9 @@ export async function POST(request: NextRequest) {
 
 💡 이는 데모용 분석 결과입니다. 실제 의료진의 지시를 따르세요.`
       }
-    } else {
-      mockData = {
-        extracted_text: "업로드된 이미지에서 처방전 정보를 찾을 수 없습니다. 명확한 처방전 이미지를 업로드해주세요.",
-        medications: [],
-        analysis: `❌ 처방전 인식 실패
-
-업로드된 이미지가 처방전이 아니거나 텍스트가 불분명합니다.
-
-📝 권장사항:
-• 처방전 전체가 포함된 이미지 업로드
-• 충분한 해상도와 밝기 확보
-• 글자가 선명하게 보이는 각도로 촬영
-
-💡 이는 데모용 응답입니다. 실제 OCR 기능을 위해서는 Python 백엔드가 필요합니다.`
-      }
     }
 
-    const mockResponse = {
-      success: true,
-      data: mockData
-    }
+    // 응답 반환
 
     return NextResponse.json(mockResponse)
     
