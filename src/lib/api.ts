@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// 임시로 하드코딩 - 나중에 환경변수로 변경 예정
-const API_BASE_URL = 'https://your-backend-url.com' // 백엔드 배포 후 변경 필요
+// 환경변수 또는 기본값 사용
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prescription-backend.vercel.app'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
