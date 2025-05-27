@@ -150,14 +150,15 @@ export default function Home() {
           )}
 
           {/* 서비스 안내 */}
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
             <div className="flex items-center">
-              <div className="text-yellow-600 mr-2">ℹ️</div>
+              <div className="text-blue-600 mr-2">🚀</div>
               <div>
-                <p className="text-yellow-800 font-medium">개발 모드</p>
-                <p className="text-yellow-700 text-sm">
-                  현재 백엔드 서버가 로컬에서 실행되어야 합니다. 
-                  프로덕션 배포를 위해서는 Railway 또는 다른 클라우드 서비스에 백엔드를 배포해야 합니다.
+                <p className="text-blue-800 font-medium">데모 버전</p>
+                <p className="text-blue-700 text-sm">
+                  현재 모의 데이터로 작동합니다. 실제 AI 분석을 위해서는 Railway에 백엔드를 배포해야 합니다.
+                  <br />
+                  <strong>테스트:</strong> 파일명에 "prescription" 또는 "처방전"을 포함하여 업로드해보세요!
                 </p>
               </div>
             </div>
