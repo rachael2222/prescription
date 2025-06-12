@@ -1,9 +1,0 @@
-backend/
-venv/
-.streamlit/
-samples/
-*.py
-requirements.txt
-README_REACT.md
-README_NEXTJS.md
-prescription*.png 
