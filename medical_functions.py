@@ -26,12 +26,12 @@ from config import get_api_keys
 # API 키 설정
 API_KEYS = get_api_keys()
 
-# OpenAI 클라이언트 초기화
+# OpenAI 클라이언트 초기화 (새 버전)
 client = None
 if API_KEYS["OPENAI_API_KEY"]:
     try:
-        openai.api_key = API_KEYS["OPENAI_API_KEY"]
-        client = openai
+        from openai import OpenAI
+        client = OpenAI(api_key=API_KEYS["OPENAI_API_KEY"])
     except Exception as e:
         print(f"OpenAI 클라이언트 초기화 중 오류 발생: {str(e)}")
 
@@ -238,8 +238,8 @@ def analyze_medical_record(text, medication_list=None):
         처방전 내용: {text}
         """
         
-        completion = openai.ChatCompletion.create(
-            model="gpt-4o",
+        completion = client.chat.completions.create(
+            model="gpt-4",
             messages=[
                 {
                     "role": "system", 

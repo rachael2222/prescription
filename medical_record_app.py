@@ -34,13 +34,12 @@ from config import get_api_keys
 # API 키 설정
 API_KEYS = get_api_keys()
 
-# OpenAI 클라이언트 초기화
+# OpenAI 클라이언트 초기화 (새 버전)
 client = None
 if API_KEYS["OPENAI_API_KEY"]:
     try:
-        # 0.28.1 버전 사용 - 가장 단순한 방식으로 설정
-        openai.api_key = API_KEYS["OPENAI_API_KEY"]
-        client = openai
+        from openai import OpenAI
+        client = OpenAI(api_key=API_KEYS["OPENAI_API_KEY"])
     except Exception as e:
         st.error(f"OpenAI 클라이언트 초기화 중 오류 발생: {str(e)}")
 
@@ -488,9 +487,9 @@ def analyze_medical_record(text, medication_list=None, medication_codes=None):
                 각 약품에 대해 2-3문장 이내로 간결하게 설명해주세요.
                 """
                 
-                # ChatGPT 호출
-                drug_info_completion = openai.ChatCompletion.create(
-                    model="gpt-4o",
+                # ChatGPT 호출 (새 버전)
+                drug_info_completion = client.chat.completions.create(
+                    model="gpt-4",
                     messages=[
                         {
                             "role": "system", 
@@ -502,7 +501,7 @@ def analyze_medical_record(text, medication_list=None, medication_codes=None):
                     max_tokens=800
                 )
                 
-                # ChatGPT 응답 저장
+                # ChatGPT 응답 저장 (새 버전)
                 chatgpt_drug_info = drug_info_completion.choices[0].message.content
                 
                 # 약품명 추출 (번호. 약품명 패턴) - 더 정확한 패턴으로 수정
@@ -667,9 +666,9 @@ def analyze_medical_record(text, medication_list=None, medication_codes=None):
             f"처방전 내용: {text}"
         )
         
-        # 최종 분석
-        completion = openai.ChatCompletion.create(
-            model="gpt-4o",
+        # 최종 분석 (새 버전)
+        completion = client.chat.completions.create(
+            model="gpt-4",
             messages=[
                 {
                     "role": "system", 
