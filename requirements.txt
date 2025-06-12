@@ -3,4 +3,5 @@ openai>=1.0.0
 requests
 pillow
 gtts
-urllib3 
+urllib3
+python-dotenv 
