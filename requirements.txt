@@ -1,8 +1,8 @@
-streamlit
-openai
-pillow
-requests
-gtts
-python-dotenv
-pandas
-numpy 
+streamlit==1.28.1
+openai==1.3.0
+pillow==10.0.1
+requests==2.31.0
+gtts==2.4.0
+python-dotenv==1.0.0
+pandas==2.1.1
+numpy==1.24.3 
