@@ -15,8 +15,8 @@ Streamlit으로 구축된 사용자 친화적인 처방전 분석 웹 애플리�
 
 - **Streamlit**: Python 기반 웹 애플리케이션 프레임워크
 - **OpenAI API**: GPT-4 모델을 활용한 텍스트 분석
-- **Upstage API**: OCR 텍스트 추출
-- **DUR API**: 약품 안전정보 조회
+- **ocr API**: OCR 텍스트 추출
+- **식약청 API**: 약품 안전정보 조회
 - **gTTS**: 텍스트-음성 변환
 - **Pillow**: 이미지 처리
 - **Pandas/Numpy**: 데이터 처리
