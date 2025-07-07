@@ -19,8 +19,8 @@ except AttributeError:
     pass
 
 # API 정보 설정 (HTTPS에서 HTTP로 변경)
-DUR_API_BASE_URL = "http://apis.data.go.kr/1471000/DURPrdlstInfoService03"
-DUR_API_KEY_DECODED = "7JoLokAR/RTfM/JwVNepjVIYCxYVM8SoTkD85mCgAXik51SO+uM+dmho7kDpSwMO9FX3t1WwxweejH0NGWpYJQ=="
+DUR_API_BASE_URL = ""
+DUR_API_KEY_DECODED = ""
 
 # OCR에서 추출된 약품명 목록 (예시)
 OCR_DRUG_NAMES = [
