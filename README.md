@@ -55,8 +55,8 @@ pip install -r requirements.txt
 ```env
 OPENAI_API_KEY=sk-your-openai-api-key
 UPSTAGE_API_KEY=your-upstage-api-key
-DUR_API_KEY=your-dur-api-key
-DUR_API_BASE_URL=http://apis.data.go.kr/1471000/DURPrdlstInfoService03
+식약청_API_KEY=your-dur-api-key
+식약청_API_BASE_URL=http://apis.data.go.kr/1471000/DURPrdlstInfoService03
 ```
 
 ### 5. 애플리케이션 실행
