@@ -89,10 +89,10 @@ streamlit run medical_record_app.py
 "Advanced settings" → "Secrets"에서 다음과 같이 설정:
 ```toml
 [secrets]
-OPENAI_API_KEY = "sk-your-actual-openai-key"
-UPSTAGE_API_KEY = "your-upstage-key"
-DUR_API_KEY = "your-dur-key"
-DUR_API_BASE_URL = "http://apis.data.go.kr/1471000/DURPrdlstInfoService03"
+OPENAI_API_KEY = ""
+ocr_API_KEY = "your-upstage-key"
+식약청_API_KEY = "your-dur-key"
+식약청_API_BASE_URL = ""
 ```
 
 ### 4. 배포 완료
